@@ -14,8 +14,15 @@ public class PlayerMovement : MonoBehaviour
     public ContactFilter2D MovementFilter;
     Vector2 MovementInput;
 
+    private bool isMoving;
+    private Animator animator;
+    public bool isFacingRight=true;
     List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
 
+
+    private void Awake() {
+        animator = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void start(){
         rb = GetComponent<Rigidbody2D>();
@@ -33,5 +40,28 @@ public class PlayerMovement : MonoBehaviour
                 rb.MovePosition(rb.position + MoveSpeed * Time.deltaTime * MovementInput);
             }
         }
-    }
+
+        if(!isMoving) {
+            MovementInput.x=Input.GetAxisRaw("Horizontal");
+            MovementInput.y=Input.GetAxisRaw("Vertical");
+            if(isFacingRight==true && MovementInput.x==-1) {
+                transform.localScale=new Vector3(-2,2,0);
+                isFacingRight=false;
+            }
+            if(isFacingRight==false && MovementInput.x==1) {
+                transform.localScale=new Vector3(2,2,0);
+                isFacingRight=true;
+            }
+
+        if(MovementInput.x!=0) MovementInput.y=0;
+
+        animator.SetBool("isMoving",isMoving);
+        // attack
+        if(Input.GetMouseButtonDown(0)) {
+            animator.SetTrigger("attack");
+        }
+    }    
+}
+
+
 }

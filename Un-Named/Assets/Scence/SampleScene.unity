@@ -114807,7 +114807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dc5339e75311343a8f4997d76d74cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   isFacingRight: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
