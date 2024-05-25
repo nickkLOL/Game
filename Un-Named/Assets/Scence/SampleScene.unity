@@ -132,6 +132,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7005437649536446268, guid: f6447740949d542acbef22db0d769859, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2102945359, guid: d3fa67bc371bd4146afc175b640c858c, type: 3}
+    - target: {fileID: 7005437649536446268, guid: f6447740949d542acbef22db0d769859, type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
@@ -139,13 +143,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DinoSprites - tard_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7042772821441727196, guid: f6447740949d542acbef22db0d769859, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7657767643564619876, guid: f6447740949d542acbef22db0d769859, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5784
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7657767643564619876, guid: f6447740949d542acbef22db0d769859, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5012
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657767643564619876, guid: f6447740949d542acbef22db0d769859, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657767643564619876, guid: f6447740949d542acbef22db0d769859, type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,6 +199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657767643564619876, guid: f6447740949d542acbef22db0d769859, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -199,7 +215,10 @@ PrefabInstance:
       addedObject: {fileID: 1181604281}
     - targetCorrespondingSourceObject: {fileID: 7042772821441727196, guid: f6447740949d542acbef22db0d769859, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1181604283}
+      addedObject: {fileID: 1181604285}
+    - targetCorrespondingSourceObject: {fileID: 7042772821441727196, guid: f6447740949d542acbef22db0d769859, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181604286}
   m_SourcePrefab: {fileID: 100100000, guid: f6447740949d542acbef22db0d769859, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -114755,7 +114774,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1181604283
+--- !u!95 &1181604285
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181604278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 063f36f861f761c4f8484f346fd6eb0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1181604286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114764,26 +114804,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181604278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8fb55a38d5846bab05f2b264f3a00e, type: 3}
+  m_Script: {fileID: 11500000, guid: 41dc5339e75311343a8f4997d76d74cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 3.5
-  collisionOffset: 0.05
-  rb: {fileID: 1181604281}
-  MovementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
+  moveSpeed: 5
+  isFacingRight: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
