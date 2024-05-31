@@ -42,18 +42,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if(!isMoving) {
-            MovementInput.x=Input.GetAxisRaw("Horizontal");
-            MovementInput.y=Input.GetAxisRaw("Vertical");
-            if(isFacingRight==true && MovementInput.x==-1) {
-                transform.localScale=new Vector3(-2,2,0);
+            MovementInput.x = Input.GetAxisRaw("Horizontal");
+            MovementInput.y = Input.GetAxisRaw("Vertical");
+            if(isFacingRight == true && MovementInput.x == -1) {
+                transform.localScale = new Vector3(-2,2,0);
                 isFacingRight=false;
             }
-            if(isFacingRight==false && MovementInput.x==1) {
-                transform.localScale=new Vector3(2,2,0);
-                isFacingRight=true;
+            if(isFacingRight == false && MovementInput.x == 1) {
+                transform.localScale = new Vector3(2,2,0);
+                isFacingRight = true;
             }
 
-        if(MovementInput.x!=0) MovementInput.y=0;
+        if(MovementInput.x != 0) MovementInput.y = 0;
 
         animator.SetBool("isMoving",isMoving);
         // attack
